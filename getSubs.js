@@ -24,11 +24,11 @@ ws.on("message", function (message) {
   // parse the message as JSON
   const data = JSON.parse(message);
 
-  // check if the event matches the one you want to listen to
+  // check if the event is a ChannelSubscriptionEvent
   if (data.event === "App\\Events\\ChannelSubscriptionEvent") {
     console.log("ChannelSubscriptionEvent received:", data.data);
   }
-
+ // check if the event is a LuckyUsersWhoGotGiftSubscriptionsEvent
   if (data.event === "App\\Events\\LuckyUsersWhoGotGiftSubscriptionsEvent") {
     console.log("ChannelSubscriptionGiftEvent received:", data.data);
   }
